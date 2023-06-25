@@ -1,0 +1,7 @@
+.env
+node_modules
+.DS_Store
+googleapis.json
+sequelize-cli/config/config.json
+dist
+.gitsecret/keys/random_seed

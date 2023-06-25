@@ -1,0 +1,41 @@
+{
+  "display_information": {
+      "name": "HomedepotAI"
+  },
+  "features": {
+      "app_home": {
+          "home_tab_enabled": false,
+          "messages_tab_enabled": true,
+          "messages_tab_read_only_enabled": false
+      },
+      "bot_user": {
+          "display_name": "HomedepotAI",
+          "always_online": false
+      }
+  },
+  "oauth_config": {
+      "scopes": {
+          "bot": [
+              "chat:write",
+              "channels:history",
+              "mpim:history",
+              "im:history",
+              "groups:history"
+          ]
+      }
+  },
+  "settings": {
+      "event_subscriptions": {
+          "request_url": "https://badc-2600-4040-9275-e800-b133-ab7c-b110-64cd.ngrok-free.app/event",
+          "bot_events": [
+              "message.channels",
+              "message.groups",
+              "message.im",
+              "message.mpim"
+          ]
+      },
+      "org_deploy_enabled": false,
+      "socket_mode_enabled": false,
+      "token_rotation_enabled": false
+  }
+}

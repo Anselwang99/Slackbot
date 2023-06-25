@@ -1,0 +1,48 @@
+# Installing node and npm via nvm
+
+If you do not have nvm installed, please install it using:
+
+```
+brew install nvm
+```
+
+Let's install node 18.16.0 now
+
+```
+nvm install 18.16.0
+nvm use 18.16.0
+```
+
+Ensure that node 18.16.0 is now being used:
+```
+node --version
+```
+It should output: v18.16.0
+
+# Install other dependencies:
+
+Install nodemon:
+```
+npm i -g nodemon
+```
+
+# Run the app
+
+Run the app on port 3000 by:
+```
+npm i
+npm run dev
+```
+
+# HTTP-tunneling using ngrok
+
+We need to do http-tunneling into the slack app backend running currently on localhost:
+```
+ngrok http 3000
+```
+You should get some ngrok subdomain which http-tunnels into localhost:3000. This makes the slack app backend running locally on port 3000 accessible to internet on that particular ngrok domain. Let's say the ngrok domain is https://f676-2402-e280-21c9-88-4111-37ec-6c17-9e51.ngrok-free.app
+
+# Update the app manifest
+Go to api.slack.com. Find the app that you earlier created. Go to app manifest. Replace the manifest over there with the one in this file: slack-config/manifest.json. Remember to replace the request url appropriately. Right now, it is https://f676-2402-e280-21c9-88-4111-37ec-6c17-9e51.ngrok-free.app/event. Suppose that the ngrok url that you got is https://abc-def.ngrok.io. So, you should replace the existing manifest like this: https://abc-def.ngrok.io/event
+
+Once done, reinstall the app in your workspace and verify the url.
