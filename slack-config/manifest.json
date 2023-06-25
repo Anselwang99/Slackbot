@@ -26,7 +26,7 @@
   },
   "settings": {
       "event_subscriptions": {
-          "request_url": "https://badc-2600-4040-9275-e800-b133-ab7c-b110-64cd.ngrok-free.app/event",
+          "request_url": "https://slack-chat-bot-2cf32668e563.herokuapp.com/event",
           "bot_events": [
               "message.channels",
               "message.groups",
